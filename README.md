@@ -69,7 +69,7 @@ Pick one of the options below. All of them load `src/index.ts` through the
 ### Option 1: install from a local checkout (recommended for now)
 
 ```bash
-git clone <this-repo-url> omp-langfuse
+git clone https://github.com/singh-gur/omp-langfuse.git
 cd omp-langfuse
 pnpm install          # the extension needs its runtime dependencies on disk
 omp plugin install "$PWD"
@@ -82,8 +82,11 @@ omp start. `just link` does the same (`omp plugin link`).
 ### Option 2: install from git
 
 ```bash
-omp plugin install git+https://<host>/<owner>/omp-langfuse.git
-# or a shorthand such as: omp plugin install github:<owner>/omp-langfuse
+omp plugin install github:singh-gur/omp-langfuse
+# or pin a branch, tag or commit:
+omp plugin install github:singh-gur/omp-langfuse#main
+# or the full URL:
+omp plugin install git+https://github.com/singh-gur/omp-langfuse.git
 ```
 
 omp runs `bun install` in `~/.omp/plugins`, which also installs the extension's
