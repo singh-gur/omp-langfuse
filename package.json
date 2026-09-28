@@ -1,0 +1,60 @@
+{
+  "name": "omp-langfuse",
+  "version": "0.1.0",
+  "description": "Langfuse observability extension for the omp coding agent: traces prompts, agent turns, model generations, tool calls and subagents to Langfuse.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "omp",
+    "omp-extension",
+    "oh-my-pi",
+    "langfuse",
+    "observability",
+    "tracing",
+    "opentelemetry"
+  ],
+  "omp": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "test:unit": "node --test test/unit.test.ts test/config.test.ts"
+  },
+  "dependencies": {
+    "@langfuse/otel": "^5.11.1",
+    "@langfuse/tracing": "^5.11.1",
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.222.0",
+    "@opentelemetry/resources": "^2.11.0",
+    "@opentelemetry/sdk-trace-node": "^2.11.0"
+  },
+  "peerDependencies": {
+    "@oh-my-pi/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@oh-my-pi/pi-coding-agent": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@oh-my-pi/pi-coding-agent": "18.4.2",
+    "@types/node": "^24.19.0",
+    "typescript": "^5.9.3"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.6.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.6.0"
+}
